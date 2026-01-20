@@ -24,7 +24,7 @@ class PacoteBuscador {
         return fetch(this.baseURL + endpoint, {
             method,
             headers: {
-                "Content-Type": "application/json"
+                "Content-type": "application/json; charset=UTF-8"
             },
             body: JSON.stringify(body)
         }).then(response => response.json());
@@ -33,8 +33,27 @@ class PacoteBuscador {
 
 const titulo = document.querySelector("#titulo");
 const conteudo = document.querySelector("#conteudo");
+const saida = document.querySelector("#saida");
 const saidaTitulo = document.querySelector("#renderizador-titulo");
 const saidaConteudo = document.querySelector("#renderizador-conteudo");
 const form = document.querySelector("form");
 
-const API = new PacoteBuscador("https://jsonplaceholder.typicode.com/posts");
+const API = new PacoteBuscador("https://jsonplaceholder.typicode.com");
+
+form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const data = {
+        title: titulo.value,
+        body: conteudo.value,
+        userId:1
+    }
+
+    API.post("/posts", data).then(resultado => {
+        console.log(resultado);
+
+        saida.style.display = "flex";
+        saidaTitulo.textContent = resultado.title;
+        saidaConteudo.textContent = resultado.body;
+    })
+})

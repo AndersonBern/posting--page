@@ -21,24 +21,27 @@
 
     <main>
         <section id="entrada">
-            <p>
+            <p id="msg">
                 No Do Your Post!, cada ideia tem valor e cada experiência pode inspirar alguém. Não importa se é um pensamento rápido, uma conquista importante, uma viagem inesquecível ou até um desafio superado. O que você vive pode fazer a diferença na vida de outras pessoas.
                 Não guarde suas ideias só para você.</br> Crie seu post agora e faça parte de algo maior!
             </p>
-            <form action="post">
+            <form>
                 <div class="titulo-post">
                 <label for="titulo">Insira o TÍTULO da sua publicação:</label>
-                <input type="text" name="titulo" id="titulo" placeholder="Insira seu título aqui.">
+                <input type="text" name="titulo" id="titulo" placeholder="ex.: Como foi minhas férias..." required>
                 </div>
                 <div class="conteudo-post">
                 <label for="conteudo">Insira o CONTEÚDO da sua publicação:</label>
-                <textarea name="conteudo" id="conteudo" placeholder="Insira seu conteudo aqui."></textarea>
+                <textarea name="conteudo" id="conteudo" placeholder="ex.: Minhas férias foram..." required></textarea>
                 </div>
                 <button type="submit">Publicar</button>
             </form>
         </section>
 
         <section id="saida">
+            <div class="divider-center"></div>
+            <div class="profile"><div class="you">My post:</div></div>
+            
             <h2 id="renderizador-titulo"></h2>
             <p id="renderizador-conteudo"></p>
         </section>

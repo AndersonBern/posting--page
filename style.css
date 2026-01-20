@@ -28,7 +28,9 @@ main {
 }
 
 #saida {
+    padding: 30px;
     display: none;
+    flex-flow: column;
 }
 
 .titulo-post, .conteudo-post {
@@ -44,24 +46,31 @@ label {
     text-shadow: 1px 1px 2px black;
 }
 input {
+    max-width: 600px;
     padding: 10px;
     border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.644);
 }
 textarea {
+    max-width: 600px;
     height: 150px;
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.644);
 }
-p {
+#msg {
     padding: 30px;
     font-weight: 500;
 }
 button {
     margin-left: 30px;
-    padding: 10px;
+    padding: 10px 50px;
     border-radius: 5px;
+    border: none;
     background-color: rgb(149, 225, 228);
     cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.644);
 }
 button:hover {
     background-color: rgb(102, 231, 160);
@@ -105,8 +114,42 @@ button:hover {
     border-radius: 10px;
 }
 
+.divider-center {
+    width: 93vw;
+    height: 4px;
+    background-color: var(--cor-1);
+    margin: 10px -20px;
+    border-radius: 10px;
+}
+
+.profile {
+    width: 40px;
+    height: 40px;
+    background-color: #C10B4B;
+    background: url(src/profile.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.you {
+    width: 100px;
+    position: relative;
+    left: 110%;
+    top: 22%;
+}
+#renderizador-titulo, #renderizador-conteudo {
+    padding: 20px 0px 0px 40px;
+    max-width: 90%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 footer{
     background-color: var(--cor-1);
+    text-align: center;
 }
 footer p{
     color: var(--cor-4);
